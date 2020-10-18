@@ -3,19 +3,14 @@ import os
 
 #Set variable to path to open
 file_to_load = os.path.join("Resources", "election_results.csv")
-
 #Set variable to path to save
 file_to_save = os.path.join("Analysis", "election_analysis.txt")
-
 #Intialize total_votes variable
 total_votes = 0
-
 #Initialize list for candidates
 candidate_options = []
-
 #Initialize dict for candidate votes
 candidate_votes = {}
-
 # Winning Candidate and Winning Count Tracker
 winning_candidate = ""
 winning_count = 0
@@ -25,11 +20,9 @@ winning_percentage = 0
 with open(file_to_load) as election_data:
     # Read the file object with the reader function.
     file_reader = csv.reader(election_data)
-    
     # Read and print the header row.
     headers = next(file_reader)
     print(headers)
-    
     # Print each row in the CSV file.
     for row in file_reader:
         print(row)
@@ -56,6 +49,7 @@ with open(file_to_save, "w") as txt_file:
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
         f"-------------------------\n")
+
     print(election_results, end="")
     # Save the final vote count to the text file.
     txt_file.write(election_results)
@@ -69,7 +63,11 @@ with open(file_to_save, "w") as txt_file:
         vote_percentage = float(votes) / float(total_votes) * 100
         #Print the candidate name and percentage of votes.
         #print(f"{candidate_name}: received {vote_percentage}% of the vote.")
-        #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        # Print each candidate, their voter count, and percentage to the terminal.
+        print(candidate_results)
+        #  Save the candidate results to our text file.
+        txt_file.write(candidate_results)
             
         #4.The total number of votes each candidate won
         #Determine if the votes are greater than the winning count.
@@ -88,7 +86,9 @@ with open(file_to_save, "w") as txt_file:
         f"Winning Vote Count: {winning_count:,}\n"
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"-------------------------\n")
-    #print(winning_candidate_summary)
+        
+    # Save the winning candidate's name to the text file.
+    txt_file.write(winning_candidate_summary)
 
 #Close CSV file
 election_data.close()
