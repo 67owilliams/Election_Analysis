@@ -14,6 +14,11 @@ file_to_save = os.path.join("Analysis", "election_analysis.txt")
 # Using the open() function with the "w" mode we will write data to the file.
 open(file_to_save, "w")
 
+# Using the with statement open the file as a text file.
+outfile = open(file_to_save, "w")
+# Write some data to the file.
+outfile.write("Hello World")
+
 #1.The toal number of votes cast
 #2.A complete list of candidates that received votes
 #3.The percentage of votes each candidate won
