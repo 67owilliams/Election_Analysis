@@ -1,19 +1,21 @@
 # Election_Analysis
 
+## Resouces
+* Data source: election_results.csv
+* Software: Python v.3.8.5, VS Code v.1.50.1
 
-## Overview
-Using Python to calculate the outcome for the election.
+## [Overview of Election Audit] 
+Using Python to calculate the outcome for the election to find:
 1. The total number of votes cast.
 2. Complete list of candidates that received votes.
 3. The number of votes each candidate received.
 4. Percentage of votes each candidate won.
-5. Winner of the election based on popular votes.
+5. The voter turnout for each county
+6. The percentage of votes each county
+7. The county with the highest vote count
+8. Winner of the election based on popular votes.
 
-## Resouces
-Data source: election_results.csv
-Software: Python v.3.8.5, VS Code v.1.50.1
-
-## Summary
+## Election-Audit Results
 There was a total of 369,711 votes cast during the election
 
 #### Candidates
